@@ -1,0 +1,44 @@
+.loader{--lime:#adff24;--gray:#3d4841;--panel:#121814;position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;pointer-events:none;color:#98a59a}
+.visual{height:200px;width:240px;max-width:100%;display:flex;align-items:center;justify-content:center;position:relative}
+.label{font-family:var(--font-mono);font-size:10px;letter-spacing:.04em}
+.face{position:relative;width:190px;height:112px;border:1px solid var(--gray);border-radius:45px;background:var(--panel);box-shadow:inset 0 0 28px #adff2408}
+.antenna{position:absolute;left:90px;top:-25px;width:2px;height:24px;background:var(--gray)}
+.antenna::before{content:'';position:absolute;left:-3px;top:-5px;width:8px;height:8px;border-radius:50%;background:var(--lime);animation:led 3s ease-in-out infinite}
+.eye{position:absolute;top:44px;width:32px;height:20px;border:4px solid var(--gray);border-bottom:0;border-radius:30px 30px 0 0;transform-origin:center;animation:eyeBoot 3s ease-in-out infinite}
+.leftEye{left:42px}.rightEye{right:42px;animation-delay:.12s}
+.faceLight{position:absolute;bottom:15px;left:85px;width:20px;height:2px;background:var(--lime);opacity:.35}
+.assembly{position:relative;width:220px;height:200px}
+.outlineBot{position:absolute;inset:0;animation:assemble 3s ease-in-out infinite}
+.outlineHead{position:absolute;width:126px;height:92px;top:25px;left:46px;border:1px solid var(--gray);border-radius:43px;animation:trace 3s ease-in-out infinite}
+.outlineVisor{position:absolute;inset:14px 12px;border:1px solid var(--gray);border-radius:28px}
+.outlineEar{position:absolute;top:28px;width:15px;height:32px;border:1px solid var(--gray);border-radius:10px}.leftEar{left:-12px}.rightEar{right:-12px}
+.outlineAntenna{position:absolute;left:108px;top:9px;height:16px;border-left:1px solid var(--gray)}
+.outlineAntenna::before{content:'';position:absolute;width:6px;height:6px;left:-4px;top:-4px;border:1px solid var(--lime);border-radius:50%}
+.outlineBody{position:absolute;top:121px;left:76px;width:66px;height:59px;border:1px solid var(--gray);border-radius:22px 22px 32px 32px;display:flex;flex-direction:column;align-items:center;gap:6px;padding-top:15px;animation:trace 3s .4s ease-in-out infinite}
+.outlineBody>i{width:15px;height:2px;background:var(--lime);opacity:.6}
+.scan{position:absolute;left:10px;right:10px;height:1px;background:var(--lime);box-shadow:0 0 12px #adff2470;animation:scan 3s ease-in-out infinite}
+.orbits{position:relative;width:170px;height:170px;perspective:420px}
+.orbit{position:absolute;inset:12px;border:1px solid var(--gray);border-top-color:var(--lime);border-right-color:var(--lime);border-radius:50%;transform-style:preserve-3d}
+.orbitA{animation:orbitA 3s linear infinite}.orbitB{animation:orbitB 3.6s linear infinite}
+.core{position:absolute;inset:69px;border-radius:50%;background:radial-gradient(circle at 35% 30%,var(--lime),#3e6516);box-shadow:0 0 28px #adff242e;animation:core 3s ease-in-out infinite}
+.diagnostic{width:230px;max-width:100%;padding:18px;background:var(--panel);border:1px solid var(--gray);border-radius:12px;font-family:var(--font-mono);font-size:10px}
+.diagnosticTitle{display:flex;align-items:center;gap:9px;font-size:9px;letter-spacing:.08em;margin-bottom:15px}
+.diagnosticTitle>i{width:5px;height:5px;border-radius:50%;background:var(--lime)}
+.diagnosticRow{display:flex;justify-content:space-between;align-items:center;padding:5px 0}
+.diagnosticRow>i{width:6px;height:6px;border-radius:50%;background:var(--gray);animation:boot 3s step-end infinite}
+.diagnosticRow:nth-of-type(3)>i{animation-delay:.5s}.diagnosticRow:nth-of-type(4)>i{animation-delay:1s}
+.activity{height:2px;background:var(--gray);margin-top:14px;overflow:hidden}.activity>i{display:block;width:35%;height:100%;background:var(--lime);animation:activity 3s ease-in-out infinite}
+.diagnosticMessage{margin-top:12px;color:#eef3ed;font-size:9px}.diagnosticMessage>span{display:inline-block;vertical-align:-2px;width:2px;height:11px;margin-left:4px;background:var(--lime);animation:caret .7s step-end infinite}
+.loader[data-paused=true] *,.loader[data-paused=true] *::before{animation-play-state:paused!important}
+@keyframes eyeBoot{0%,15%{border-color:var(--gray);opacity:.4;transform:scaleY(1)}25%,36%{border-color:var(--lime);opacity:1;filter:drop-shadow(0 0 4px var(--lime))}38%,42%{transform:scaleY(.12);border-color:var(--lime);opacity:1}46%,82%{transform:scaleY(1);border-color:var(--lime);opacity:1}100%{border-color:var(--gray);opacity:.4}}
+@keyframes led{0%,15%,100%{opacity:.2}30%,85%{opacity:1}}
+@keyframes assemble{0%{clip-path:inset(0 0 100% 0);opacity:.25}65%,86%{clip-path:inset(0);opacity:1}100%{clip-path:inset(0);opacity:.3}}
+@keyframes trace{0%,15%,100%{border-color:var(--gray)}55%,82%{border-color:var(--lime)}}
+@keyframes scan{0%{top:0;opacity:0}12%{opacity:.8}75%{top:190px;opacity:.8}90%,100%{top:200px;opacity:0}}
+@keyframes orbitA{from{transform:rotateX(62deg) rotateZ(0deg)}to{transform:rotateX(62deg) rotateZ(360deg)}}
+@keyframes orbitB{from{transform:rotateY(64deg) rotateZ(360deg)}to{transform:rotateY(64deg) rotateZ(0deg)}}
+@keyframes core{0%,100%{transform:scale(.9);opacity:.8}50%{transform:scale(1.1);opacity:1}}
+@keyframes boot{0%,20%,100%{background:var(--gray)}30%,85%{background:var(--lime)}}
+@keyframes activity{0%{transform:translateX(-110%)}70%,100%{transform:translateX(390%)}}
+@keyframes caret{0%,49%{opacity:1}50%,100%{opacity:0}}
+@media(prefers-reduced-motion:reduce){.loader *,.loader *::before{animation:none!important}.eye{border-color:var(--lime);opacity:1}.antenna::before{opacity:1}.outlineBot{clip-path:none;opacity:1}.scan{top:90px;opacity:.6}.orbitA{transform:rotateX(62deg)}.orbitB{transform:rotateY(64deg)}}

@@ -1,0 +1,16 @@
+.media { --medical-accent: #8079ef; --medical-surface: #f5f4ff; min-width: 0; }
+.frame { border: 1px solid #8079ef55; border-radius: 10px; overflow: hidden; background: var(--medical-surface); }
+.toolbar { display: flex; align-items: center; gap: 20px; padding: 10px 14px; background: #252437; color: #d9d7f8; font-family: var(--font-mono); font-size: 9px; }
+.toolbar > span:first-child { color: var(--medical-accent); letter-spacing: 3px; white-space: nowrap; }
+.toolbar > span:last-child { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.frame img { display: block; width: 100%; height: auto; }
+.frame > a { display: block; }
+.preview { align-self: center; padding: 14px; border-radius: 14px; background: #8079ef0c; }
+.detailed { padding: clamp(14px, 3vw, 36px); display: grid; gap: 42px; }
+.figure { margin: 0; min-width: 0; }
+.detailed figcaption { padding: 18px 2px 0; }
+.detailed h3 { font-size: 20px; margin-bottom: 8px; }
+.detailed p { color: var(--muted); line-height: 1.6; max-width: 720px; }
+.detailed figcaption a { display: inline-block; margin-top: 10px; color: #b7b2ff; font-size: 13px; }
+.frame img.report { max-width: 666px; margin-inline: auto; }
+@media (max-width: 700px) { .preview { padding: 8px; } .toolbar { font-size: 8px; padding: 8px; gap: 10px; } .detailed { gap: 30px; } }

@@ -1,0 +1,25 @@
+.workflow { margin: 0; min-width: 0; padding: 22px; background: #131b17; color: #e4ece6; border: 1px solid #37463c; border-radius: 12px; }
+.caption { display: flex; justify-content: space-between; gap: 12px; font-family: var(--font-mono); font-size: 10px; color: #acb9b0; margin-bottom: 24px; }
+.caption > span:first-child { color: var(--accent); letter-spacing: .15em; }
+.steps { display: flex; list-style: none; padding: 0; margin: 0; gap: 10px; }
+.steps > li { display: flex; align-items: center; gap: 10px; flex: 1; min-width: 0; }
+.node { flex: 1; min-width: 0; }
+.node > svg { color: var(--accent); margin-block: 12px; }
+.number { display: block; color: #819589; font: 10px var(--font-mono); }
+.node h3 { font-size: 14px; line-height: 1.4; }
+.node p { font-size: 13px; line-height: 1.6; color: #afbeb3; margin-top: 10px; }
+.arrow { flex-shrink: 0; color: #617869; }
+.footer { margin-top: 24px; padding-top: 16px; border-top: 1px solid #304136; font: 9px var(--font-mono); color: #a8b9ae; line-height: 1.7; }
+.compact .steps { flex-direction: column; gap: 0; }
+.compact .steps > li { position: relative; padding: 5px 0; }
+.compact .node { display: flex; align-items: center; gap: 12px; }
+.compact .node > svg { margin: 0; }
+.compact .node h3 { font-size: 12px; }
+.compact .arrow { transform: rotate(90deg); width: 12px; }
+.compact .caption { margin-bottom: 12px; }
+.compact .footer { margin-top: 12px; }
+.detailed { padding: clamp(20px, 4vw, 48px); border: 0; border-radius: 0; }
+.roles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; border-top: 1px solid #304136; margin-top: 35px; padding-top: 25px; }
+.roles p { color: #afbeb3; font-size: 13px; line-height: 1.7; }
+.roles strong { display: block; color: #e4ece6; margin-bottom: 5px; }
+@media(max-width: 700px) { .detailed .steps { flex-direction: column; gap: 14px; } .detailed .steps > li { align-items: stretch; } .detailed .node { position: relative; padding-left: 48px; } .detailed .node > svg { position: absolute; left: 0; top: 7px; } .detailed .number { margin-bottom: 5px; } .detailed .arrow { align-self: center; transform: rotate(90deg); } .roles { grid-template-columns: 1fr; gap: 18px; } }
