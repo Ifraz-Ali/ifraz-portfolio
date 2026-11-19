@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next";
 import { Header } from "@/components/header";
 import { CursorLight } from "@/components/motion";
 import "@fontsource/inter/400.css";
@@ -45,6 +46,7 @@ export default function RootLayout({
         <Header />
         {children}
         <CursorLight />
+        <Analytics />
       </body>
     </html>
   );
