@@ -9,13 +9,27 @@ import "@fontsource/space-grotesk/600.css";
 import "@fontsource/space-grotesk/700.css";
 import "@fontsource/jetbrains-mono/400.css";
 import "./globals.css";
+const description = "Full Stack Engineer based in Karachi. I build web and mobile applications, connecting thoughtful interfaces with reliable backend systems.";
 export const metadata: Metadata = {
+  metadataBase: new URL("https://ifraz-portfolio.vercel.app"),
   title: {
     default: "Ifraz Ali — Full Stack Engineer",
     template: "%s | Ifraz Ali",
   },
-  description:
-    "Full Stack Engineer based in Karachi. Web, mobile, telehealth, delivery platforms, and AI-assisted applications. Explore projects and freelance work.",
+  description,
+  openGraph: {
+    title: "Ifraz Ali — Full Stack Engineer",
+    description,
+    siteName: "Ifraz Ali",
+    type: "website",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Ifraz Ali — Full Stack Engineer",
+    description,
+    images: [{ url: "/opengraph-image", alt: "Ifraz Ali — Full Stack Engineer. Web and mobile applications." }],
+  },
   robots: { index: true, follow: true },
   icons: { icon: "/icon.svg" },
 };
